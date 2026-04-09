@@ -164,6 +164,35 @@ EOF
 
 **Test:** `codex "what is 2+2?"`
 
+#### Codex in VS Code with OmniRoute API access
+
+Use Codex from the VS Code integrated terminal:
+
+1. Open your project in VS Code
+2. Open **Terminal → New Terminal**
+3. Ensure `~/.codex/config.yaml` points to OmniRoute:
+
+```yaml
+model: auto
+apiKey: sk-your-omniroute-key
+apiBaseUrl: http://localhost:20128/v1
+```
+
+For remote OmniRoute servers, change `apiBaseUrl` to your public endpoint (for example
+`https://your-domain.com/v1`).
+
+Run Codex from the VS Code terminal:
+
+```bash
+codex "summarize this repository structure"
+```
+
+Verify in OmniRoute dashboard:
+
+- `/dashboard/usage` for request logs
+- `/dashboard/combos` for routing/fallback behavior
+- `/dashboard/providers` for provider status
+
 ---
 
 ### OpenCode
